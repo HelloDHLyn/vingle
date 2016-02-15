@@ -8,4 +8,6 @@ Rails.application.routes.draw do
   post  'login' => 'members#checkout'
 
   get   'board' => 'board#view'
+  get   'board/write' => 'board#write'
+  post  'board/write' => 'board#create'
 end

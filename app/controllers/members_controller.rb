@@ -8,6 +8,7 @@ class MembersController < ApplicationController
   def checkout
     user = Member.find_by(userid: params[:member][:userid].downcase, password: params[:member][:password])
     if user
+      session[:userid] = user.userid
       redirect_to '/board'
     else
       flash[:danger] = '아이디나 비밀번호가 틀립니다.'
