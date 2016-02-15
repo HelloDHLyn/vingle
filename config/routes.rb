@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
-  get 'welcome/index'
-  
   mount API => '/'
   
-  resources :members
-  
-  root 'welcome#index'
+  root  'welcome#index'
+
+  get   'signup' => 'members#new'
+  get   'login' => 'members#login'
+  post  'login' => 'members#checkout'
+
+  get   'board' => 'board#view'
 end
