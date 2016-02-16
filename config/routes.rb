@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root  'welcome#index'
 
   get   'signup' => 'members#new'
+  post  'signup' => 'members#create'
   get   'login' => 'members#login'
   post  'login' => 'members#checkout'
 

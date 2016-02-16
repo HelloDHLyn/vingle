@@ -1,14 +1,14 @@
+<h1>새 글 쓰기</h1>
 <%= form_for(:article) do |f| %>
-
-  <p>
+  <div class="form-group">
     <%= f.label :title %>
-    <%= f.text_field :title %>
-  </p>
-  <p>
+    <%= f.text_field :title, class: 'form-control', placeholder: '제목' %>
+  </div>
+  <div class="form-group">
     <%= f.label :content %>
-    <%= f.text_area :content %>
-  </p>
-  <%= f.hidden_field :writer, value: session[:userid]  %>
-  <p><%= f.submit "작성" %></p>
+    <%= f.text_area :content, class: 'form-control' %>
+  </div>
+  <%= f.hidden_field :writer, value: session[:userid] %>
+  <p><%= f.submit "작성", class: 'btn btn-default' %></p>
 
 <% end %>

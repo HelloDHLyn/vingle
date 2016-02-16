@@ -1,6 +1,6 @@
 <div class="contents">
   <h2>게시글 목록</h2>
-  <table ng-controller="boardController">
+  <table class="table" ng-controller="boardController">
     <thead>
       <tr>
         <th>번호</th>
@@ -16,5 +16,7 @@
       </tr>
     </tbody>
   </table>
-  <a href="/board/write">새 글 쓰기</a>
+  <% if session[:userid] %>
+  <a class="btn btn-default" href="/board/write">새 글 쓰기</a>
+  <% end %>
 </div>

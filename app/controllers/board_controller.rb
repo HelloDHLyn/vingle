@@ -17,7 +17,7 @@ class BoardController < ApplicationController
   def comment
     @comment = Comment.new(comment_param)
     if @comment.save
-      render 'detail', id: param[:comment][:id]
+      redirect_to '/board/'+params[:comment][:article]
     else
       render 'write'
     end
