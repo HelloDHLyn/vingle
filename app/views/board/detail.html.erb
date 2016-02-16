@@ -6,3 +6,17 @@
     <a href="/board">목록으로 돌아가기</a>
   </div>
 </div>
+<div class="comment contents">
+  <ul ng-repeat="comment in comments">
+    <li><strong>{{comment.writer}}</strong> {{comment.content}}</a></td>
+  </ul>
+  <%= form_for(:comment, url: '/board/comment') do |f| %>
+    <p>
+      <%= f.label :content %>
+      <%= f.text_field :content, placeholder: "내용 입력" %>
+    </p>
+    <%= f.hidden_field :article, value: params[:id] %>
+    <%= f.hidden_field :writer, value: session[:userid] %>
+    <%= f.submit "작성" %>
+  <% end %>
+</div>

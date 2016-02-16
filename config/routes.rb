@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   get   'board/write' => 'board#write'
   post  'board/write' => 'board#create'
   get   'board/:id' => 'board#detail'
+  post  'board/comment' => 'board#comment'
 end

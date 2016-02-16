@@ -14,11 +14,24 @@ class BoardController < ApplicationController
     end
   end
 
+  def comment
+    @comment = Comment.new(comment_param)
+    if @comment.save
+      render 'detail', id: param[:comment][:id]
+    else
+      render 'write'
+    end
+  end
+
   def detail
   end
 
   private
     def article_param
       params.require(:article).permit(:title, :content, :writer)
+    end
+
+    def comment_param
+      params.require(:comment).permit(:article, :content, :writer)
     end
 end
