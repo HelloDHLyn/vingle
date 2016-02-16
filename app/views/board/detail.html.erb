@@ -19,6 +19,7 @@
             <strong>{{comment.writer}}</strong> {{comment.content}}</a>
           </li>
         </ul>
+        <% if session[:userid] %>
         <%= form_for(:comment, url: '/board/comment') do |f| %>
         <div class="input-group">
           <%= f.text_field :content, class: 'form-control', placeholder: "댓글 입력" %>
@@ -28,6 +29,7 @@
             <%= f.submit "완료", class: 'btn btn-default' %>
           </span>
         </div>
+        <% end %>
         <% end %>
       </div>
     </div>

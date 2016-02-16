@@ -3,6 +3,9 @@ class BoardController < ApplicationController
   end
 
   def write
+    if not session[:userid]
+      redirect_to '/login'
+    end
   end
 
   def create
