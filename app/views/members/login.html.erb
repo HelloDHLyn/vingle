@@ -1,14 +1,14 @@
 <% flash.each do |message_type, message| %>
-  <span><%= message %></span>
+  <p><%= message %></p>
 <% end %>
 <%= form_for(:member) do |f| %>
-
-  <%= f.label :userid %>
-  <%= f.text_field :userid %>
-
-  <%= f.label :password %>
-  <%= f.password_field :password %>
-
-  <%= f.submit "로그인" %>
-
+  <p>
+    <%= f.label :userid %>
+    <%= f.text_field :userid %>
+  </p>
+  <p>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  </p>
+  <p><%= f.submit "로그인" %></p>
 <% end %>

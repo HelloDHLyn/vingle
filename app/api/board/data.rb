@@ -6,5 +6,12 @@ module Board
         Article.all
       end
     end
+
+    resource :article do
+      desc "Get single Article"
+      get do
+        Article.find(params[:id])
+      end
+    end
   end
 end

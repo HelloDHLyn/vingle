@@ -14,6 +14,9 @@ class BoardController < ApplicationController
     end
   end
 
+  def detail
+  end
+
   private
     def article_param
       params.require(:article).permit(:title, :content, :writer)

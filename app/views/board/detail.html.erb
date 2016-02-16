@@ -1,0 +1,8 @@
+<div class="board contents">
+  <div ng-controller="articleController" ng-init="article_id=<%= params[:id] %>">
+    <h3>{{article.title}}</h3>
+    <div>{{article.content}}</div>
+    <div>{{article.writer}}</div>
+    <a href="/board">목록으로 돌아가기</a>
+  </div>
+</div>

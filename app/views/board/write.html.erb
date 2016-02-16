@@ -8,6 +8,7 @@
     <%= f.label :content %>
     <%= f.text_area :content %>
   </p>
+  <%= f.hidden_field :writer, value: session[:userid]  %>
   <p><%= f.submit "작성" %></p>
 
 <% end %>
